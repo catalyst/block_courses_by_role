@@ -26,13 +26,11 @@ class block_courses_by_role extends block_base {
     function init() {
         $this->config = get_config('block_courses_by_role');
         $this->title = format_string(get_string('pluginname', 'block_courses_by_role'));
-        $labels = isset($this->config->labels) ? explode("\n",$this->config->labels) : [];
+        $labels = !empty($this->config->labels) ? explode("\n",$this->config->labels) : [];
         $roles = isset($this->config->roles) ? $this->config->roles : 'teacher,student';
-        if ($labels != [""]) {
-          foreach ($labels as $label) {
-              list($key,$value) = explode(':',$label);
-              $this->rolenames[$key] = $value;
-          }
+        foreach ($labels as $label) {
+            list($key,$value) = explode(':',$label);
+            $this->rolenames[$key] = $value;
         }
         $this->roles = explode(',',$roles);
     }
