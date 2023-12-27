@@ -33,3 +33,5 @@ $string['labels_desc'] = "Rather than using the role shortname, when matched use
 	";
 $string['roles'] = 'Include roles';
 $string['roles_desc'] = 'Limit the display to users only in these roles (select-multiple if required)';
+$string['privacy:metadata'] = 'The courses_by_role plugin does not store any personal data.';
+
